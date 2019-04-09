@@ -185,7 +185,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 olvia1_p = message.member.displayName;
                 olvia1_p_time = hora + ":" + minuto;
@@ -194,7 +194,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 olvia1_s = message.member.displayName;
                 olvia1_s_time = hora + ":" + minuto;
@@ -206,7 +206,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 velia1_p = message.member.displayName;
                 velia1_p_time = hora + ":" + minuto;
@@ -214,7 +214,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 velia1_s = message.member.displayName;
                 velia1_s_time = hora + ":" + minuto;
@@ -226,7 +226,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 velia2_p = message.member.displayName;
                 velia2_p_time = hora + ":" + minuto;
@@ -234,7 +234,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 velia2_s = message.member.displayName;
                 velia2_s_time = hora + ":" + minuto;
@@ -246,7 +246,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 balenos1_p = message.member.displayName;
                 balenos1_p_time = hora + ":" + minuto;
@@ -254,7 +254,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 balenos1_s = message.member.displayName;
                 balenos1_s_time = hora + ":" + minuto;
@@ -265,7 +265,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 balenos2_p = message.member.displayName;
                 balenos2_p_time = hora + ":" + minuto;
@@ -273,7 +273,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 balenos2_s = message.member.displayName;
                 balenos2_s_time = hora + ":" + minuto;
@@ -285,7 +285,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 serendia1_p = message.member.displayName;
                 serendia1_p_time = hora + ":" + minuto;
@@ -293,7 +293,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 serendia1_s = message.member.displayName;
                 serendia1_s_time = hora + ":" + minuto;
@@ -304,7 +304,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 serendia2_p = message.member.displayName;
                 serendia2_p_time = hora + ":" + minuto;
@@ -312,7 +312,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 serendia2_s = message.member.displayName;
                 serendia2_s_time = hora + ":" + minuto;
@@ -324,7 +324,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 calpheon1_p = message.member.displayName;
                 calpheon1_p_time = hora + ":" + minuto;
@@ -332,7 +332,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 calpheon1_s = message.member.displayName;
                 calpheon1_s_time = hora + ":" + minuto;
@@ -343,7 +343,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 calpheon2_p = message.member.displayName;
                 calpheon2_p_time = hora + ":" + minuto;
@@ -351,7 +351,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 calpheon2_s = message.member.displayName;
                 calpheon2_s_time = hora + ":" + minuto;
@@ -362,7 +362,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 mediah1_p = message.member.displayName;
                 mediah1_p_time = hora + ":" + minuto;
@@ -370,7 +370,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 mediah1_s = message.member.displayName;
                 mediah1_s_time = hora + ":" + minuto;
@@ -381,7 +381,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 mediah2_p = message.member.displayName;
                 mediah2_p_time = hora + ":" + minuto;
@@ -389,7 +389,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 mediah2_s = message.member.displayName;
                 mediah2_s_time = hora + ":" + minuto;
@@ -400,7 +400,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 valencia1_p = message.member.displayName;
                 valencia1_p_time = hora + ":" + minuto;
@@ -408,7 +408,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 valencia1_s = message.member.displayName;
                 valencia1_s_time = hora + ":" + minuto;
@@ -419,7 +419,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 valencia2_p = message.member.displayName;
                 valencia2_p_time = hora + ":" + minuto;
@@ -427,7 +427,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 valencia2_s = message.member.displayName;
                 valencia2_s_time = hora + ":" + minuto;
@@ -438,7 +438,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 kamasylvia1_p = message.member.displayName;
                 kamasylvia1_p_time = hora + ":" + minuto;
@@ -446,7 +446,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 kamasylvia1_s = message.member.displayName;
                 kamasylvia1_s_time = hora + ":" + minuto;
@@ -457,7 +457,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 arsha_p = message.member.displayName;
                 arsha_p_time = hora + ":" + minuto;
@@ -465,7 +465,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 arsha_s = message.member.displayName;
                 arsha_s_time = hora + ":" + minuto;
@@ -478,7 +478,7 @@ client.on("message", async message => {
 
     if (comando == "keep") {
         var today = new Date();
-        var hora = today.getHours();
+        var hora = (today.getHours() -3);
         var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
 
         if (olvia1_p == message.member.displayName) {
@@ -622,7 +622,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 olvia1_p = fulano;
                 olvia1_p_time = hora + ":" + minuto;
@@ -631,7 +631,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 olvia1_s = message.member.displayName;
                 olvia1_s_time = hora + ":" + minuto;
@@ -643,7 +643,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 velia1_p = fulano;
                 velia1_p_time = hora + ":" + minuto;
@@ -651,7 +651,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 velia1_s = fulano;
                 velia1_s_time = hora + ":" + minuto;
@@ -663,7 +663,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 velia2_p = fulano;
                 velia2_p_time = hora + ":" + minuto;
@@ -671,7 +671,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 velia2_s = fulano;
                 velia2_s_time = hora + ":" + minuto;
@@ -683,7 +683,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 balenos1_p = fulano;
                 balenos1_p_time = hora + ":" + minuto;
@@ -691,7 +691,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 balenos1_s = fulano;
                 balenos1_s_time = hora + ":" + minuto;
@@ -702,7 +702,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 balenos2_p = fulano;
                 balenos2_p_time = hora + ":" + minuto;
@@ -710,7 +710,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 balenos2_s = fulano;
                 balenos2_s_time = hora + ":" + minuto;
@@ -722,7 +722,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 serendia1_p = fulano;
                 serendia1_p_time = hora + ":" + minuto;
@@ -730,7 +730,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 serendia1_s = fulano;
                 serendia1_s_time = hora + ":" + minuto;
@@ -741,7 +741,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 serendia2_p = fulano;
                 serendia2_p_time = hora + ":" + minuto;
@@ -749,7 +749,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 serendia2_s = fulano;
                 serendia2_s_time = hora + ":" + minuto;
@@ -761,7 +761,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 calpheon1_p = fulano;
                 calpheon1_p_time = hora + ":" + minuto;
@@ -769,7 +769,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 calpheon1_s = fulano;
                 calpheon1_s_time = hora + ":" + minuto;
@@ -780,7 +780,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 calpheon2_p = fulano;
                 calpheon2_p_time = hora + ":" + minuto;
@@ -788,7 +788,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 calpheon2_s = fulano;
                 calpheon2_s_time = hora + ":" + minuto;
@@ -799,7 +799,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 mediah1_p = fulano;
                 mediah1_p_time = hora + ":" + minuto;
@@ -807,7 +807,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 mediah1_s = fulano;
                 mediah1_s_time = hora + ":" + minuto;
@@ -818,7 +818,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 mediah2_p = fulano;
                 mediah2_p_time = hora + ":" + minuto;
@@ -826,7 +826,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 mediah2_s = fulano;
                 mediah2_s_time = hora + ":" + minuto;
@@ -837,7 +837,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 valencia1_p = fulano;
                 valencia1_p_time = hora + ":" + minuto;
@@ -845,7 +845,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 valencia1_s = fulano;
                 valencia1_s_time = hora + ":" + minuto;
@@ -856,7 +856,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 valencia2_p = fulano;
                 valencia2_p_time = hora + ":" + minuto;
@@ -864,7 +864,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 valencia2_s = fulano;
                 valencia2_s_time = hora + ":" + minuto;
@@ -875,7 +875,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 kamasylvia1_p = fulano;
                 kamasylvia1_p_time = hora + ":" + minuto;
@@ -883,7 +883,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 kamasylvia1_s = fulano;
                 kamasylvia1_s_time = hora + ":" + minuto;
@@ -894,7 +894,7 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 arsha_p = fulano;
                 arsha_p_time = hora + ":" + minuto;
@@ -902,7 +902,7 @@ client.on("message", async message => {
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = today.getHours();
+                var hora = (today.getHours() -3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 arsha_s = fulano;
                 arsha_s_time = hora + ":" + minuto;
@@ -918,7 +918,7 @@ client.on("message", async message => {
 
     if (comando == "bye") {
         var today = new Date();
-        var hora = today.getHours();
+        var hora = (today.getHours() -3);
         var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
 
         if (olvia1_p == message.member.displayName) {
