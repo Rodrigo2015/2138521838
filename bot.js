@@ -7,76 +7,109 @@ var olvia1_p = "Sem informações.";
 var olvia1_p_time = "Sem informações.";
 var olvia1_s = "Sem informações.";
 var olvia1_s_time = "Sem informações.";
+var olvia1_p_id;
+var olvia1_s_id;
+
 
 var balenos1_p = "Sem informações.";
 var balenos1_p_time = "Sem informações.";
 var balenos1_s = "Sem informações.";
 var balenos1_s_time = "Sem informações.";
+var balenos1_p_id;
+var balenos1_s_id;
 
 var balenos2_p = "Sem informações.";
 var balenos2_p_time = "Sem informações.";
 var balenos2_s = "Sem informações.";
 var balenos2_s_time = "Sem informações.";
+var balenos2_p_id;
+var balenos2_s_id;
 
 var serendia1_p = "Sem informações.";
 var serendia1_p_time = "Sem informações.";
 var serendia1_s = "Sem informações.";
 var serendia1_s_time = "Sem informações.";
+var serendia1_p_id;
+var serendia1_s_id;
 
 var serendia2_p = "Sem informações.";
 var serendia2_p_time = "Sem informações.";
 var serendia2_s = "Sem informações.";
 var serendia2_s_time = "Sem informações.";
+var serendia2_p_id;
+var serendia2_s_id;
 
 var calpheon1_p = "Sem informações.";
 var calpheon1_p_time = "Sem informações.";
 var calpheon1_s = "Sem informações.";
 var calpheon1_s_time = "Sem informações.";
+var calpheon1_p_id;
+var calpheon1_s_id;
 
 var calpheon2_p = "Sem informações.";
 var calpheon2_p_time = "Sem informações.";
 var calpheon2_s = "Sem informações.";
 var calpheon2_s_time = "Sem informações.";
+var calpheon2_p_id;
+var calpheon2_s_id;
 
 var mediah1_p = "Sem informações.";
 var mediah1_p_time = "Sem informações.";
 var mediah1_s = "Sem informações.";
 var mediah1_s_time = "Sem informações.";
+var mediah1_p_id;
+var mediah1_s_id;
 
 var mediah2_p = "Sem informações.";
 var mediah2_p_time = "Sem informações.";
 var mediah2_s = "Sem informações.";
 var mediah2_s_time = "Sem informações.";
+var mediah2_p_id;
+var mediah2_s_id;
 
 var velia1_p = "Sem informações.";
 var velia1_p_time = "Sem informações.";
 var velia1_s = "Sem informações.";
 var velia1_s_time = "Sem informações.";
+var velia1_p_id;
+var velia1_s_id;
 
 var velia2_p = "Sem informações.";
 var velia2_p_time = "Sem informações.";
 var velia2_s = "Sem informações.";
 var velia2_s_time = "Sem informações.";
+var velia2_p_id;
+var velia2_s_id;
 
 var valencia1_p = "Sem informações.";
 var valencia1_p_time = "Sem informações.";
 var valencia1_s = "Sem informações.";
 var valencia1_s_time = "Sem informações.";
+var valencia1_p_id;
+var valencia1_s_id;
 
 var valencia2_p = "Sem informações.";
 var valencia2_p_time = "Sem informações.";
 var valencia2_s = "Sem informações.";
 var valencia2_s_time = "Sem informações.";
+var valencia2_p_id;
+var valencia2_s_id;
 
 var arsha_p = "Sem informações.";
 var arsha_p_time = "Sem informações.";
 var arsha_s = "Sem informações.";
 var arsha_s_time = "Sem informações.";
+var arsha_p_id;
+var arsha_s_id;
 
 var kamasylvia1_p = "Sem informações.";
 var kamasylvia1_p_time = "Sem informações.";
 var kamasylvia1_s = "Sem informações.";
 var kamasylvia1_s_time = "Sem informações.";
+
+var kamasylvia1_p_id;
+var kamasylvia1_s_id;
+
 var guilds;
 
 client.on("ready", () => {
@@ -85,30 +118,848 @@ client.on("ready", () => {
     guilds = client.guilds;
     console.log(guilds);
 
-    /*var af = 400000000;
-    
-        a = setInterval(function () {
-            console.log(`teste`);
-    
-    
-            try {
-                client.users.get("someID").send("someMessage");
-                client.users.get(olvia1_p).send("Welcome to the server!")
+    var af = 400000000;
+
+    a = setInterval(function () {
+        console.log(`teste`);
+
+
+        try {
+            var hour = olvia1_p_time.split(':')[0];
+            var min = olvia1_p_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(olvia1_p_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
             }
-            catch (e) {
-    
-                console.log(e);
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = balenos1_p_time.split(':')[0];
+            var min = balenos1_p_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(balenos1_p_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
             }
-    
-    
-    
-            af = af - 1;
-    
-            if (af == 0) {
-                clearInterval(a);
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = balenos2_p_time.split(':')[0];
+            var min = balenos2_p_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(balenos2_p_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
             }
-            console.log(af);
-        }, 5000);*/
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = serendia1_p_time.split(':')[0];
+            var min = serendia1_p_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(serendia1_p_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = serendia2_p_time.split(':')[0];
+            var min = serendia2_p_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(serendia2_p_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = calpheon1_p_time.split(':')[0];
+            var min = calpheon1_p_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(calpheon1_p_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = calpheon2_p_time.split(':')[0];
+            var min = calpheon2_p_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(calpheon2_p_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = mediah1_p_time.split(':')[0];
+            var min = mediah1_p_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(mediah1_p_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+        try {
+            var hour = mediah2_p_time.split(':')[0];
+            var min = mediah2_p_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(mediah2_p_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+        try {
+            var hour = velia1_p_time.split(':')[0];
+            var min = velia1_p_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(velia1_p_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+        try {
+            var hour = velia2_p_time.split(':')[0];
+            var min = velia2_p_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(velia2_p_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+        try {
+            var hour = valencia1_p_time.split(':')[0];
+            var min = valencia1_p_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(valencia1_p_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+        try {
+            var hour = valencia2_p_time.split(':')[0];
+            var min = valencia2_p_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(valencia2_p_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = arsha_p_time.split(':')[0];
+            var min = arsha_p_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(arsha_p_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = kamasylvia1_p_time.split(':')[0];
+            var min = kamasylvia1_p_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(kamasylvia1_p_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = olvia1_s_time.split(':')[0];
+            var min = olvia1_s_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(olvia1_s_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = balenos1_s_time.split(':')[0];
+            var min = balenos1_s_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(balenos1_s_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = balenos2_s_time.split(':')[0];
+            var min = balenos2_s_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(balenos2_s_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = serendia1_s_time.split(':')[0];
+            var min = serendia1_s_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(serendia1_s_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = serendia2_s_time.split(':')[0];
+            var min = serendia2_s_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(serendia2_s_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = calpheon1_s_time.split(':')[0];
+            var min = calpheon1_s_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(calpheon1_s_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = calpheon2_s_time.split(':')[0];
+            var min = calpheon2_s_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(calpheon2_s_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = mediah1_s_time.split(':')[0];
+            var min = mediah1_s_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(mediah1_s_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+        try {
+            var hour = mediah2_s_time.split(':')[0];
+            var min = mediah2_s_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(mediah2_s_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+        try {
+            var hour = velia1_s_time.split(':')[0];
+            var min = velia1_s_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(velia1_s_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+        try {
+            var hour = velia2_s_time.split(':')[0];
+            var min = velia2_s_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(velia2_s_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+        try {
+            var hour = valencia1_s_time.split(':')[0];
+            var min = valencia1_s_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(valencia1_s_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+        try {
+            var hour = valencia2_s_time.split(':')[0];
+            var min = valencia2_s_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(valencia2_s_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = arsha_s_time.split(':')[0];
+            var min = arsha_s_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(arsha_s_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+
+        try {
+            var hour = kamasylvia1_s_time.split(':')[0];
+            var min = kamasylvia1_s_time.split(':')[1];
+
+            var today = new Date();
+            var hora = (today.getHours() - 3);
+            var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
+
+            var date_olvia1 = new Date(2000, 0, 1, hour, min); // 9:00 AM
+
+            var datenow = new Date(2000, 0, 1, hora, minuto); // 5:00 PM
+            
+            var diff = datenow - date_olvia1;
+
+            console.log(datenow);
+            console.log(date_olvia1);
+            console.log(diff);
+            if(diff > 3300000) // 3300000 55m 
+            {
+                client.users.get(kamasylvia1_s_id).send("Vai ficar mais tempo no spot? digite !keep no chat do bot!");
+            }
+        
+        }
+        catch (e) {
+
+            console.log(e);
+        }
+        af = af - 1;
+
+        if (af == 0) {
+            clearInterval(a);
+        }
+        console.log(af);
+    }, 60000);
 }
 );
 
@@ -123,26 +974,27 @@ client.on("message", async message => {
     const comando = args.shift().toLocaleLowerCase();
 
     if (comando == "teste") {
-        //guilds.member.fin //only green status
+        // message.channel.send(olvia1_p_id);
+        //client.users.get(olvia1_p_id).send("teste");
     }
 
     if (comando == "check") {
         message.channel.send(
-            "```" + "\n" + "Velia 1: Principal - " + velia1_p + " " + velia1_p_time + " | Secundário - " + velia1_s + " " + velia1_s_time + "\n" + "```"+
-            "```" + "\n" +"Velia 2: Principal - " + velia2_p + " " + velia2_p_time + " | Secundário - " + velia2_s + " " + velia2_s_time+ "\n" + "```"+
-            "```" + "\n" +"Balenos 1: Principal - " + balenos1_p + " " + balenos1_p_time + " | Secundário - " + balenos1_s + " " + balenos1_s_time+ "\n" + "```"+
-            "```" + "\n" +"Balenos 2: Principal - " + balenos2_p + " " + balenos2_p_time + " | Secundário - " + balenos2_s + " " + balenos2_s_time + "\n" + "```"+
-            "```" + "\n" +"Serendia 1: Principal - " + serendia1_p + " " + serendia1_p_time + " | Secundário - " + serendia1_s + " " + serendia1_s_time + "\n" + "```"+
-            "```" + "\n" +"Serendia 2: Principal - " + serendia2_p + " " + serendia2_p_time + " | Secundário - " + serendia2_s + " " + serendia2_s_time + "\n" + "```"+
-            "```" + "\n" +"Calpheon 1: Principal - " + calpheon1_p + " " + calpheon1_p_time + " | Secundário - " + calpheon1_s + " " + calpheon1_s_time + "\n" + "```"+
-            "```" + "\n" +"Calpheon 2: Principal - " + calpheon2_p + " " + calpheon2_p_time + " | Secundário - " + calpheon2_s + " " + calpheon2_s_time + "\n" + "```"+
-            "```" + "\n" +"Mediah 1: Principal - " + mediah1_p + " " + mediah1_p_time + " | Secundário - " + mediah1_s + " " + mediah1_s_time + "\n" + "```"+
-            "```" + "\n" + "Mediah 2: Principal - " + mediah2_p + " " + mediah2_p_time + " | Secundário - " + mediah2_s + " " + mediah2_s_time + "\n" + "```"+
-            "```" + "\n" + "Valência 1: Principal - " + valencia1_p + " " + valencia1_p_time + " | Secundário - " + valencia1_s + " " + valencia1_s_time + "\n" + "```"+
-            "```" + "\n" +"Valência 2: Principal - " + valencia2_p + " " + valencia2_p_time + " | Secundário - " + valencia2_s + " " + valencia2_s_time + "\n" + "```"+
-            "```" + "\n" + "Kamasylvia 1: Principal - " + kamasylvia1_p + " " + kamasylvia1_p_time + " | Secundário - " + kamasylvia1_s + " " + kamasylvia1_s_time + "\n" + "```"+
-            "```" + "\n" + "Arsha: Principal - " + arsha_p + " " + arsha_p_time + " | Secundário - " + arsha_s + " " + arsha_s_time + "\n" + "```"+
-            "```" + "\n" + "Olvia 1: Principal - " + olvia1_p + " " + olvia1_p_time + " | Secundário - " + olvia1_s + " " + olvia1_s_time+ "\n" + "```"
+            "```" + "\n" + "Velia 1: Principal - " + velia1_p + " " + velia1_p_time + " | Secundário - " + velia1_s + " " + velia1_s_time + "\n" + "```" +
+            "```" + "\n" + "Velia 2: Principal - " + velia2_p + " " + velia2_p_time + " | Secundário - " + velia2_s + " " + velia2_s_time + "\n" + "```" +
+            "```" + "\n" + "Balenos 1: Principal - " + balenos1_p + " " + balenos1_p_time + " | Secundário - " + balenos1_s + " " + balenos1_s_time + "\n" + "```" +
+            "```" + "\n" + "Balenos 2: Principal - " + balenos2_p + " " + balenos2_p_time + " | Secundário - " + balenos2_s + " " + balenos2_s_time + "\n" + "```" +
+            "```" + "\n" + "Serendia 1: Principal - " + serendia1_p + " " + serendia1_p_time + " | Secundário - " + serendia1_s + " " + serendia1_s_time + "\n" + "```" +
+            "```" + "\n" + "Serendia 2: Principal - " + serendia2_p + " " + serendia2_p_time + " | Secundário - " + serendia2_s + " " + serendia2_s_time + "\n" + "```" +
+            "```" + "\n" + "Calpheon 1: Principal - " + calpheon1_p + " " + calpheon1_p_time + " | Secundário - " + calpheon1_s + " " + calpheon1_s_time + "\n" + "```" +
+            "```" + "\n" + "Calpheon 2: Principal - " + calpheon2_p + " " + calpheon2_p_time + " | Secundário - " + calpheon2_s + " " + calpheon2_s_time + "\n" + "```" +
+            "```" + "\n" + "Mediah 1: Principal - " + mediah1_p + " " + mediah1_p_time + " | Secundário - " + mediah1_s + " " + mediah1_s_time + "\n" + "```" +
+            "```" + "\n" + "Mediah 2: Principal - " + mediah2_p + " " + mediah2_p_time + " | Secundário - " + mediah2_s + " " + mediah2_s_time + "\n" + "```" +
+            "```" + "\n" + "Valência 1: Principal - " + valencia1_p + " " + valencia1_p_time + " | Secundário - " + valencia1_s + " " + valencia1_s_time + "\n" + "```" +
+            "```" + "\n" + "Valência 2: Principal - " + valencia2_p + " " + valencia2_p_time + " | Secundário - " + valencia2_s + " " + valencia2_s_time + "\n" + "```" +
+            "```" + "\n" + "Kamasylvia 1: Principal - " + kamasylvia1_p + " " + kamasylvia1_p_time + " | Secundário - " + kamasylvia1_s + " " + kamasylvia1_s_time + "\n" + "```" +
+            "```" + "\n" + "Arsha: Principal - " + arsha_p + " " + arsha_p_time + " | Secundário - " + arsha_s + " " + arsha_s_time + "\n" + "```" +
+            "```" + "\n" + "Olvia 1: Principal - " + olvia1_p + " " + olvia1_p_time + " | Secundário - " + olvia1_s + " " + olvia1_s_time + "\n" + "```"
 
         );
 
@@ -156,28 +1008,26 @@ client.on("message", async message => {
         let canal = args[0];
 
         let spot = args[1];
-       // message.channel.send("```diff" + "\n" + "-" + args[0] + "Você não digitou o canal corretamente. Tente novamente, digite o nome do canal e o número, tudo junto. Ex: mediah2." + "\n" + "```");
+        // message.channel.send("```diff" + "\n" + "-" + args[0] + "Você não digitou o canal corretamente. Tente novamente, digite o nome do canal e o número, tudo junto. Ex: mediah2." + "\n" + "```");
 
-       if(canal != "arsha" && canal != "velia1"&& canal != "velia2"
-       && canal != "balenos1"&& canal != "balenos2"
-       && canal != "serendia1"&& canal != "serendia2"
-       && canal != "calpheon1"&& canal != "calpheon2"
-       && canal != "mediah1"
-       && canal != "mediah2"
-       && canal != "valencia1"
-       && canal != "valencia2"
-       && canal != "kamasylvia1"
-       && canal != "olvia1")
-       {
+        if (canal != "arsha" && canal != "velia1" && canal != "velia2"
+            && canal != "balenos1" && canal != "balenos2"
+            && canal != "serendia1" && canal != "serendia2"
+            && canal != "calpheon1" && canal != "calpheon2"
+            && canal != "mediah1"
+            && canal != "mediah2"
+            && canal != "valencia1"
+            && canal != "valencia2"
+            && canal != "kamasylvia1"
+            && canal != "olvia1") {
             message.channel.send("```diff" + "\n" + "-" + "Você não digitou o canal corretamente. Tente novamente, digite o nome do canal e o número, tudo junto. Ex: mediah2. Digite !comando para mais informações." + "\n" + "```");
             return;
-       }
-       if(spot != "p" && spot != "s")
-       {
-        message.channel.send("```diff" + "\n" + "-" + "Você não digitou o spot corretamente. Tente novamente, digite P para principal ou S para secundário. Ex: !grind arsha p. Digite !comando para mais informações." + "\n" + "```");
-        return;
-       }
-       
+        }
+        if (spot != "p" && spot != "s") {
+            message.channel.send("```diff" + "\n" + "-" + "Você não digitou o spot corretamente. Tente novamente, digite P para principal ou S para secundário. Ex: !grind arsha p. Digite !comando para mais informações." + "\n" + "```");
+            return;
+        }
+
 
 
 
@@ -185,20 +1035,22 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 olvia1_p = message.member.displayName;
+                olvia1_p_id = message.member.id;
                 olvia1_p_time = hora + ":" + minuto;
 
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em olvia 1 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em olvia 1 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 olvia1_s = message.member.displayName;
+                olvia1_s_id = message.member.id;
                 olvia1_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em olvia 1 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em olvia 1 no spot secundário." + "\n" + "```");
             }
         }
 
@@ -206,19 +1058,21 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 velia1_p = message.member.displayName;
+                velia1_p_id = message.member.id;
                 velia1_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em velia 1 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em velia 1 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 velia1_s = message.member.displayName;
+                velia1_s_id = message.member.id;
                 velia1_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em velia 1 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em velia 1 no spot secundário." + "\n" + "```");
             }
         }
 
@@ -226,19 +1080,21 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 velia2_p = message.member.displayName;
+                velia2_p_id = message.member.id;
                 velia2_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em velia 2 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em velia 2 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 velia2_s = message.member.displayName;
+                velia2_s_id = message.member.id;
                 velia2_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em velia 2 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em velia 2 no spot secundário." + "\n" + "```");
             }
         }
 
@@ -246,38 +1102,42 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 balenos1_p = message.member.displayName;
+                balenos1_p_id = message.member.id;
                 balenos1_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em balenos 1 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em balenos 1 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 balenos1_s = message.member.displayName;
+                balenos1_s_id = message.member.id;
                 balenos1_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em balenos 1 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em balenos 1 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "balenos2") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 balenos2_p = message.member.displayName;
+                balenos2_p_id = message.member.id;
                 balenos2_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em balenos 2 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em balenos 2 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 balenos2_s = message.member.displayName;
+                balenos2_s_id = message.member.id;
                 balenos2_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em balenos 2 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em balenos 2 no spot secundário." + "\n" + "```");
             }
         }
 
@@ -285,38 +1145,42 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 serendia1_p = message.member.displayName;
+                serendia1_p_id = message.member.id;
                 serendia1_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em serendia 1 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em serendia 1 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 serendia1_s = message.member.displayName;
+                serendia1_s_id = message.member.id;
                 serendia1_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em serendia 1 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em serendia 1 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "serendia2") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 serendia2_p = message.member.displayName;
+                serendia2_p_id = message.member.id;
                 serendia2_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em serendia 2 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em serendia 2 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 serendia2_s = message.member.displayName;
+                serendia2_s_id = message.member.id;
                 serendia2_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em serendia 2 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em serendia 2 no spot secundário." + "\n" + "```");
             }
         }
 
@@ -324,152 +1188,168 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 calpheon1_p = message.member.displayName;
+                calpheon1_p_id = message.member.id;
                 calpheon1_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em calpheon 1 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em calpheon 1 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 calpheon1_s = message.member.displayName;
+                calpheon1_s_id = message.member.id;
                 calpheon1_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em calpheon 1 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em calpheon 1 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "calpheon2") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 calpheon2_p = message.member.displayName;
+                calpheon2_p_id = message.member.id;
                 calpheon2_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em calpheon 2 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em calpheon 2 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 calpheon2_s = message.member.displayName;
+                calpheon2_s_id = message.member.id;
                 calpheon2_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em calpheon 2 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em calpheon 2 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "mediah1") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 mediah1_p = message.member.displayName;
+                mediah1_p_id = message.member.id;
                 mediah1_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em mediah 1 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em mediah 1 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 mediah1_s = message.member.displayName;
+                mediah1_s_id = message.member.id;
                 mediah1_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em mediah 1 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em mediah 1 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "mediah2") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 mediah2_p = message.member.displayName;
+                mediah2_p_id = message.member.id;
                 mediah2_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em mediah 2 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em mediah 2 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 mediah2_s = message.member.displayName;
+                mediah2_s_id = message.member.id;
                 mediah2_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em mediah 2 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em mediah 2 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "valencia1") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 valencia1_p = message.member.displayName;
+                valencia1_p_id = message.member.id;
                 valencia1_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em valência 1 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em valência 1 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 valencia1_s = message.member.displayName;
+                valencia1_s_id = message.member.id;
                 valencia1_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em valência 1 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em valência 1 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "valencia2") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 valencia2_p = message.member.displayName;
+                valencia2_p_id = message.member.id;
                 valencia2_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em valência 2 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em valência 2 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 valencia2_s = message.member.displayName;
+                valencia2_s_id = message.member.id;
                 valencia2_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em valência 2 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em valência 2 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "kamasylvia1") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 kamasylvia1_p = message.member.displayName;
+                kamasylvia1_p_id = message.member.id;
                 kamasylvia1_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em kamasylvia 1 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em kamasylvia 1 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 kamasylvia1_s = message.member.displayName;
+                kamasylvia1_s_id = message.member.id;
                 kamasylvia1_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em kamasylvia 1 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em kamasylvia 1 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "arsha") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 arsha_p = message.member.displayName;
+                arsha_p_id = message.member.id;
                 arsha_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em arsha no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em arsha no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 arsha_s = message.member.displayName;
+                arsha_s_id = message.member.id;
                 arsha_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em arsha no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "!" + message.member.displayName + " está grindando em arsha no spot secundário." + "\n" + "```");
             }
         }
 
@@ -478,137 +1358,137 @@ client.on("message", async message => {
 
     if (comando == "keep") {
         var today = new Date();
-        var hora = (today.getHours() -3);
+        var hora = (today.getHours() - 3);
         var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
 
         if (olvia1_p == message.member.displayName) {
             olvia1_p_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot principal de olvia 1.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot principal de olvia 1."+ "\n" + "```");
         }
         if (olvia1_s == message.member.displayName) {
             olvia1_s_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot secundário de olvia 1.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot secundário de olvia 1."+ "\n" + "```");
         }
         if (velia1_p == message.member.displayName) {
             velia1_p_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot principal de velia 1.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot principal de velia 1."+ "\n" + "```");
         }
         if (velia1_s == message.member.displayName) {
             velia1_s_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot secundário de velia 1.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot secundário de velia 1."+ "\n" + "```");
         }
         if (velia2_p == message.member.displayName) {
             velia2_p_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot principal de velia 2.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot principal de velia 2."+ "\n" + "```");
         }
         if (velia2_s == message.member.displayName) {
             velia2_s_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot secundário de velia 2.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot secundário de velia 2."+ "\n" + "```");
         }
 
         if (balenos1_p == message.member.displayName) {
             balenos1_p_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot principal de balenos 1.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot principal de balenos 1."+ "\n" + "```");
         }
         if (balenos1_s == message.member.displayName) {
             balenos1_s_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot secundário de balenos 1.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot secundário de balenos 1."+ "\n" + "```");
         }
 
         if (balenos2_p == message.member.displayName) {
             balenos2_p_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot principal de balenos 2.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot principal de balenos 2."+ "\n" + "```");
         }
         if (balenos2_s == message.member.displayName) {
             balenos2_s_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot secundário de balenos 2.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot secundário de balenos 2."+ "\n" + "```");
         }
 
         if (serendia1_p == message.member.displayName) {
             serendia1_p_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot principal de serendia 1.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot principal de serendia 1."+ "\n" + "```");
         }
         if (serendia1_s == message.member.displayName) {
             serendia1_s_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot secundário de serendia 1.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot secundário de serendia 1."+ "\n" + "```");
         }
 
         if (serendia2_p == message.member.displayName) {
             serendia2_p_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot principal de serendia 2.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot principal de serendia 2."+ "\n" + "```");
         }
         if (serendia2_s == message.member.displayName) {
             serendia2_s_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot secundário de serendia 2.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot secundário de serendia 2."+ "\n" + "```");
         }
 
         if (calpheon1_p == message.member.displayName) {
             calpheon1_p_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot principal de calpheon 1.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot principal de calpheon 1."+ "\n" + "```");
         }
         if (calpheon1_s == message.member.displayName) {
             calpheon1_s_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot secundário de calpheon 1.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot secundário de calpheon 1."+ "\n" + "```");
         }
 
         if (calpheon2_p == message.member.displayName) {
             calpheon2_p_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot principal de calpheon 2.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot principal de calpheon 2."+ "\n" + "```");
         }
         if (calpheon2_s == message.member.displayName) {
             calpheon2_s_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot secundário de calpheon 2.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot secundário de calpheon 2."+ "\n" + "```");
         }
 
         if (mediah1_p == message.member.displayName) {
             mediah1_p_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot principal de mediah 1.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot principal de mediah 1."+ "\n" + "```");
         }
         if (mediah1_s == message.member.displayName) {
             mediah1_s_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot secundário de mediah 1.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot secundário de mediah 1."+ "\n" + "```");
         }
         if (mediah2_p == message.member.displayName) {
             mediah2_p_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot principal de mediah 2.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot principal de mediah 2."+ "\n" + "```");
         }
         if (mediah2_s == message.member.displayName) {
             mediah2_s_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot secundário de mediah 2.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot secundário de mediah 2."+ "\n" + "```");
         }
 
         if (valencia1_p == message.member.displayName) {
             valencia1_p_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot principal de valência 1.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot principal de valência 1."+ "\n" + "```");
         }
         if (valencia1_s == message.member.displayName) {
             valencia1_s_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot secundário de valência 1.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot secundário de valência 1."+ "\n" + "```");
         }
         if (valencia2_p == message.member.displayName) {
             valencia2_p_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot principal de valência 2.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot principal de valência 2."+ "\n" + "```");
         }
         if (valencia2_s == message.member.displayName) {
             valencia2_s_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot secundário de valência 2.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot secundário de valência 2."+ "\n" + "```");
         }
         if (kamasylvia1_p == message.member.displayName) {
             kamasylvia1_p_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot principal de kamasylvia 1.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot principal de kamasylvia 1."+ "\n" + "```");
         }
         if (kamasylvia1_s == message.member.displayName) {
             kamasylvia1_s_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot secundário de kamasylvia 1.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot secundário de kamasylvia 1."+ "\n" + "```");
         }
 
         if (arsha_p == message.member.displayName) {
             arsha_p_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot principal de arsha.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot principal de arsha."+ "\n" + "```");
         }
         if (arsha_s == message.member.displayName) {
             arsha_s_time = hora + ":" + minuto;
-            message.channel.send(message.member.displayName + " Vai ficar mais tempo no spot secundário de arsha.");
+            message.channel.send("```diff" + "\n" + "!" +message.member.displayName + " Vai ficar mais tempo no spot secundário de arsha."+ "\n" + "```");
         }
     }
 
@@ -622,20 +1502,20 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 olvia1_p = fulano;
                 olvia1_p_time = hora + ":" + minuto;
 
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em olvia 1 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em olvia 1 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 olvia1_s = message.member.displayName;
                 olvia1_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em olvia 1 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em olvia 1 no spot secundário." + "\n" + "```");
             }
         }
 
@@ -643,19 +1523,19 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 velia1_p = fulano;
                 velia1_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em velia 1 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em velia 1 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 velia1_s = fulano;
                 velia1_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em velia 1 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em velia 1 no spot secundário." + "\n" + "```");
             }
         }
 
@@ -663,19 +1543,19 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 velia2_p = fulano;
                 velia2_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em velia 2 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em velia 2 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 velia2_s = fulano;
                 velia2_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em velia 2 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em velia 2 no spot secundário." + "\n" + "```");
             }
         }
 
@@ -683,38 +1563,38 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 balenos1_p = fulano;
                 balenos1_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em balenos 1 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em balenos 1 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 balenos1_s = fulano;
                 balenos1_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em balenos 1 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em balenos 1 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "balenos2") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 balenos2_p = fulano;
                 balenos2_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em balenos 2 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em balenos 2 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 balenos2_s = fulano;
                 balenos2_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em balenos 2 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em balenos 2 no spot secundário." + "\n" + "```");
             }
         }
 
@@ -722,38 +1602,38 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 serendia1_p = fulano;
                 serendia1_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em serendia 1 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em serendia 1 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 serendia1_s = fulano;
                 serendia1_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em serendia 1 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em serendia 1 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "serendia2") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 serendia2_p = fulano;
                 serendia2_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em serendia 2 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em serendia 2 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 serendia2_s = fulano;
                 serendia2_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em serendia 2 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em serendia 2 no spot secundário." + "\n" + "```");
             }
         }
 
@@ -761,152 +1641,152 @@ client.on("message", async message => {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 calpheon1_p = fulano;
                 calpheon1_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em calpheon 1 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em calpheon 1 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 calpheon1_s = fulano;
                 calpheon1_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em calpheon 1 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em calpheon 1 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "calpheon2") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 calpheon2_p = fulano;
                 calpheon2_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em calpheon 2 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em calpheon 2 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 calpheon2_s = fulano;
                 calpheon2_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em calpheon 2 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em calpheon 2 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "mediah1") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 mediah1_p = fulano;
                 mediah1_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em mediah 1 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em mediah 1 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 mediah1_s = fulano;
                 mediah1_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em mediah 1 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em mediah 1 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "mediah2") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 mediah2_p = fulano;
                 mediah2_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em mediah 2 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em mediah 2 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 mediah2_s = fulano;
                 mediah2_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em mediah 2 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em mediah 2 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "valencia1") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 valencia1_p = fulano;
                 valencia1_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em valência 1 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em valência 1 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 valencia1_s = fulano;
                 valencia1_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em valência 1 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em valência 1 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "valencia2") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 valencia2_p = fulano;
                 valencia2_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em valência 2 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em valência 2 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 valencia2_s = fulano;
                 valencia2_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em valência 2 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em valência 2 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "kamasylvia1") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 kamasylvia1_p = fulano;
                 kamasylvia1_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em kamasylvia 1 no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em kamasylvia 1 no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 kamasylvia1_s = fulano;
                 kamasylvia1_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em kamasylvia 1 no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em kamasylvia 1 no spot secundário." + "\n" + "```");
             }
         }
         if (canal == "arsha") {
             if (spot == "p") {
 
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 arsha_p = fulano;
                 arsha_p_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em arsha no spot principal."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em arsha no spot principal." + "\n" + "```");
             }
             else if (spot == "s") {
                 var today = new Date();
-                var hora = (today.getHours() -3);
+                var hora = (today.getHours() - 3);
                 var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
                 arsha_s = fulano;
                 arsha_s_time = hora + ":" + minuto;
-                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em arsha no spot secundário."+ "\n" + "```");
+                message.channel.send("```diff" + "\n" + "-" + fulano + " está grindando em arsha no spot secundário." + "\n" + "```");
             }
         }
 
@@ -918,168 +1798,198 @@ client.on("message", async message => {
 
     if (comando == "bye") {
         var today = new Date();
-        var hora = (today.getHours() -3);
+        var hora = (today.getHours() - 3);
         var minuto = (today.getMinutes() < 10 ? '0' : '') + today.getMinutes();
 
         if (olvia1_p == message.member.displayName) {
             olvia1_p = "Livre ";
+            olvia1_p_id = "";
             olvia1_p_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de olvia 1."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de olvia 1." + "]" + "\n" + "```");
         }
         if (olvia1_s == message.member.displayName) {
             olvia1_s = "Livre ";
+            olvia1_s_id = "";
             olvia1_s_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de olvia 1."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de olvia 1." + "]" + "\n" + "```");
         }
         if (velia1_p == message.member.displayName) {
             velia1_p = "Livre ";
+            velia1_p_id = " ";
             velia1_p_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de velia 1."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de velia 1." + "]" + "\n" + "```");
         }
         if (velia1_s == message.member.displayName) {
             velia1_s = "Livre ";
+            velia1_s_id = " ";
             velia1_s_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de velia 1."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de velia 1." + "]" + "\n" + "```");
         }
         if (velia2_p == message.member.displayName) {
             velia2_p = "Livre ";
+            velia2_p_id = "";
             velia2_p_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de velia 2."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de velia 2." + "]" + "\n" + "```");
         }
         if (velia2_s == message.member.displayName) {
             velia2_s = "Livre ";
+            velia2_s_id = "";
             velia2_s_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de velia 2."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de velia 2." + "]" + "\n" + "```");
         }
 
         if (balenos1_p == message.member.displayName) {
             balenos1_p = "Livre ";
+            balenos1_p_id = "";
             balenos1_p_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de balenos 1."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de balenos 1." + "]" + "\n" + "```");
         }
         if (balenos1_s == message.member.displayName) {
             balenos1_s = "Livre ";
+            balenos1_s_id = "";
             balenos1_s_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de balenos 1."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de balenos 1." + "]" + "\n" + "```");
         }
 
         if (balenos2_p == message.member.displayName) {
             balenos2_p = "Livre ";
+            balenos2_p_id = "";
             balenos2_p_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de balenos 2."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de balenos 2." + "]" + "\n" + "```");
         }
         if (balenos2_s == message.member.displayName) {
             balenos2_s = "Livre ";
+            balenos2_s_id = "";
             balenos2_s_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de balenos 2."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de balenos 2." + "]" + "\n" + "```");
         }
 
         if (serendia1_p == message.member.displayName) {
             serendia1_p = "Livre ";
+            serendia1_p_id = "";
             serendia1_p_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de serendia 1."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de serendia 1." + "]" + "\n" + "```");
         }
         if (serendia1_s == message.member.displayName) {
             serendia1_s = "Livre ";
+            serendia1_s_id = "";
             serendia1_s_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de serendia 1."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de serendia 1." + "]" + "\n" + "```");
         }
 
         if (serendia2_p == message.member.displayName) {
             serendia2_p = "Livre ";
+            serendia2_p_id = "";
             serendia2_p_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de serendia 2."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de serendia 2." + "]" + "\n" + "```");
         }
         if (serendia2_s == message.member.displayName) {
             serendia2_s = "Livre ";
+            serendia2_s_id = "";
             serendia2_s_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de serendia 2."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de serendia 2." + "]" + "\n" + "```");
         }
 
         if (calpheon1_p == message.member.displayName) {
             calpheon1_p = "Livre ";
+            calpheon1_p_id = "";
             calpheon1_p_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de calpheon 1."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de calpheon 1." + "]" + "\n" + "```");
         }
         if (calpheon1_s == message.member.displayName) {
             calpheon1_s = "Livre ";
+            calpheon1_s_id = "";
             calpheon1_s_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de calpheon 1."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de calpheon 1." + "]" + "\n" + "```");
         }
 
         if (calpheon2_p == message.member.displayName) {
             calpheon2_p = "Livre ";
+            calpheon2_p_id = "";
             calpheon2_p_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de calpheon 2."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de calpheon 2." + "]" + "\n" + "```");
         }
         if (calpheon2_s == message.member.displayName) {
             calpheon2_s = "Livre ";
+            calpheon2_s_id = "";
             calpheon2_s_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de calpheon 2."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de calpheon 2." + "]" + "\n" + "```");
         }
 
         if (mediah1_p == message.member.displayName) {
             mediah1_p = "Livre ";
+            mediah1_p_id = "";
             mediah1_p_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de mediah 1."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de mediah 1." + "]" + "\n" + "```");
         }
         if (mediah1_s == message.member.displayName) {
             mediah1_s = "Livre ";
+            mediah1_s_id = "";
             mediah1_s_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de mediah 1."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de mediah 1." + "]" + "\n" + "```");
         }
         if (mediah2_p == message.member.displayName) {
             mediah2_p = "Livre ";
+            mediah2_p_id = "";
             mediah2_p_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de mediah 2."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de mediah 2." + "]" + "\n" + "```");
         }
         if (mediah2_s == message.member.displayName) {
             mediah2_s = "Livre ";
+            mediah2_s_id = "";
             mediah2_s_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de mediah 2."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de mediah 2." + "]" + "\n" + "```");
         }
 
         if (valencia1_p == message.member.displayName) {
             valencia1_p = "Livre ";
+            valencia1_p_id = "";
             valencia1_p_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de valência 1."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de valência 1." + "]" + "\n" + "```");
         }
         if (valencia1_s == message.member.displayName) {
             valencia1_s = "Livre ";
+            valencia1_s_id = "";
             valencia1_s_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de valência 1."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de valência 1." + "]" + "\n" + "```");
         }
         if (valencia2_p == message.member.displayName) {
             valencia2_p = "Livre ";
+            valencia2_p_id = "";
             valencia2_p_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de valência 2."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de valência 2." + "]" + "\n" + "```");
         }
         if (valencia2_s == message.member.displayName) {
             valencia2_s = "Livre ";
+            valencia2_s_id = "";
             valencia2_s_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de valência 2."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de valência 2." + "]" + "\n" + "```");
         }
         if (kamasylvia1_p == message.member.displayName) {
             kamasylvia1_p = "Livre ";
+            kamasylvia1_p_id = "";
             kamasylvia1_p_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de kamasylvia 1."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de kamasylvia 1." + "]" + "\n" + "```");
         }
         if (kamasylvia1_s == message.member.displayName) {
             kamasylvia1_s = "Livre ";
+            kamasylvia1_s_id = "";
             kamasylvia1_s_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de kamasylvia 1."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de kamasylvia 1." + "]" + "\n" + "```");
         }
 
         if (arsha_p == message.member.displayName) {
             arsha_p = "Livre ";
+            arsha_p_id = "";
             arsha_p_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de arsha."+"]" +"\n" + "```");
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot principal de arsha." + "]" + "\n" + "```");
         }
         if (arsha_s == message.member.displayName) {
             arsha_s = "Livre ";
+            arsha_s_id = "";
             arsha_s_time = hora + ":" + minuto;
-            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de arsha."+"]" +"\n" + "```");
-           
+            message.channel.send("```ini" + "\n" + "[" + message.member.displayName + " Saiu do spot secundário de arsha." + "]" + "\n" + "```");
+
         }
 
 
