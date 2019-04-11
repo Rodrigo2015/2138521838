@@ -960,9 +960,10 @@ client.on("ready", () => {
         }
         console.log(af);
     }, 60000);
+    */
 }
 );
-*/
+
 client.on("message", async message => {
     if (message.author.bot)
         return;
