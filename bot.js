@@ -117,7 +117,7 @@ client.on("ready", () => {
     client.user.setGame(`Em Hystria`);
     guilds = client.guilds;
     console.log(guilds);
-
+/*
     var af = 400000000;
 
     a = setInterval(function () {
@@ -962,7 +962,7 @@ client.on("ready", () => {
     }, 60000);
 }
 );
-
+*/
 client.on("message", async message => {
     if (message.author.bot)
         return;
